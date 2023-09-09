@@ -1,4 +1,4 @@
-# first_demo
+# bun_drizzle
 
 To install dependencies:
 

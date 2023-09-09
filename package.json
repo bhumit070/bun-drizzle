@@ -1,5 +1,5 @@
 {
-  "name": "first_demo",
+  "name": "bun_drizzle",
   "module": "index.ts",
   "devDependencies": {
     "@types/pg": "^8.10.2",
