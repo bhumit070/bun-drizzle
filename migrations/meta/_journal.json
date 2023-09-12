@@ -15,6 +15,13 @@
       "when": 1694509925494,
       "tag": "0001_same_stingray",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1694512259563,
+      "tag": "0002_wise_plazm",
+      "breakpoints": true
     }
   ]
 }

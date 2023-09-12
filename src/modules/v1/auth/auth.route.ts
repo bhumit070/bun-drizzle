@@ -4,9 +4,10 @@ import {
     LoginValidationSchema,
     SignUpValidationSchema,
 } from './auth.validator';
+import { server } from '../../..';
 
-export function InitV1AuthRoutes(server: Elysia<'/api/v1'>) {
-    server.group('/auth', (app) => {
+export function InitV1AuthRoutes(elysiaServer: typeof server) {
+    elysiaServer.group('/auth', (app) => {
         app.post('/login', login, {
             body: LoginValidationSchema,
         });

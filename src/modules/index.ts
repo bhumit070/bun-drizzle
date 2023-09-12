@@ -1,15 +1,15 @@
-import Elysia from 'elysia';
 import { initV1Routes } from './v1/v1.routes';
+import { server } from '../index';
 
-export function initRoutes(server: Elysia) {
+export function initRoutes(elysiaServer: typeof server) {
     // Api Mapper
-    server.group('/api', (app) => {
-        initV1Routes(app);
+    elysiaServer.group('/api', (app) => {
+        initV1Routes(app as any);
         return app;
     });
 
     // 404 Routes
-    server.all('*', (context) => {
+    elysiaServer.all('*', (context) => {
         context.set.status = 404;
         context.body = {
             message: 'Route Not Found',

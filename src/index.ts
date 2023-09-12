@@ -2,29 +2,37 @@
 import { Elysia } from 'elysia';
 import { initRoutes } from './modules';
 import { swagger } from '@elysiajs/swagger';
+import { jwt } from '@elysiajs/jwt';
 
-export const server = new Elysia().use(
-    swagger({
-        documentation: {
-            info: {
-                title: 'Elysia API',
-                version: '1.0.0',
-                description: 'Elysia API Documentation',
-            },
-            servers: [
-                {
-                    url: 'http://localhost:{port}',
-                    description: 'Local Server',
-                    variables: {
-                        port: {
-                            default: '3000',
+export const server = new Elysia()
+    .use(
+        jwt({
+            name: 'jwtPlugin',
+            secret: process.env.JWT_SECRET! || 'secret',
+        }),
+    )
+    .use(
+        swagger({
+            documentation: {
+                info: {
+                    title: 'Elysia API',
+                    version: '1.0.0',
+                    description: 'Elysia API Documentation',
+                },
+                servers: [
+                    {
+                        url: 'http://localhost:{port}',
+                        description: 'Local Server',
+                        variables: {
+                            port: {
+                                default: '3000',
+                            },
                         },
                     },
-                },
-            ],
-        },
-    }) as any,
-);
+                ],
+            },
+        }) as any,
+    );
 
 initRoutes(server);
 

@@ -17,6 +17,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@elysiajs/jwt": "^0.6.4",
     "@elysiajs/swagger": "^0.6.2",
     "drizzle-orm": "^0.28.6",
     "elysia": "^0.6.22",
