@@ -11,7 +11,9 @@
   },
   "scripts": {
     "build": "bun run build.ts",
-    "dev": "bun run --watch ./src/index.ts"
+    "dev": "bun run --watch ./src/index.ts",
+    "migrate": "drizzle-kit push:pg --config ./src/config/drizzle.config.ts",
+    "generate:migrate": "drizzle-kit generate:pg --config ./src/config/drizzle.config.ts"
   },
   "type": "module",
   "dependencies": {
