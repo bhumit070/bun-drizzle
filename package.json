@@ -10,10 +10,12 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "build": "bun run build.ts"
+    "build": "bun run build.ts",
+    "dev": "bun run --watch ./src/index.ts"
   },
   "type": "module",
   "dependencies": {
+    "@elysiajs/swagger": "^0.6.2",
     "drizzle-orm": "^0.28.6",
     "elysia": "^0.6.22",
     "pg": "^8.11.3"
