@@ -1,8 +1,21 @@
 import { ElysiaCustomContext } from '../../../types/elysia';
-import { LoginValidationSchema } from './auth.validator';
+import type {
+    TLoginValidationSchema,
+    TSignUpValidationSchema,
+} from './auth.validator';
 
 type LoginContext = ElysiaCustomContext<{
-    body: typeof LoginValidationSchema;
+    body: TLoginValidationSchema;
 }>;
 
-export function login(context: LoginContext) {}
+type SignUpContext = ElysiaCustomContext<{
+    body: TSignUpValidationSchema;
+}>;
+
+export function login(context: LoginContext) {
+    return context.body;
+}
+
+export function signup(context: SignUpContext) {
+    return context.body;
+}
